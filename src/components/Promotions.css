@@ -1,0 +1,18 @@
+.promo-banner {
+  background: #000;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  animation: glow 2s infinite alternate;
+}
+
+.promo-banner span {
+  color: #d4af37;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px gold; }
+  to { text-shadow: 0 0 15px #d4af37; }
+}
