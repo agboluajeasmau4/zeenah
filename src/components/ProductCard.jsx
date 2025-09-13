@@ -1,78 +1,63 @@
-// import React from "react";
 
-// export default function ProductCard({ product, onQuickView, onToggleWishlist, isWishlisted }) {
-//   return (
-//     <article className="product-card" aria-label={product.name}>
-//       <div className="product-media" onClick={() => onQuickView(product)}>
-//         <img className="product-img" src={product.img} alt={product.name} />
-//       </div>
 
-//       <div className="product-info">
-//         <h3 className="product-name">{product.name}</h3>
-//         <div className="product-meta">
-//           <span className="product-price">${product.price.toFixed(2)}</span>
-//           <span className="product-rating">⭐ {product.rating}</span>
-//         </div>
 
-//         <div className="product-actions">
-//           <button className="add-to-cart">Add to cart</button>
-//           <button
-//             className={`wish-btn ${isWishlisted ? "active" : ""}`}
-//             onClick={() => onToggleWishlist(product.id)}
-//             aria-pressed={isWishlisted}
-//             title={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
-//           >
-//             {isWishlisted ? "♥" : "♡"}
-//           </button>
-//         </div>
-//       </div>
-//     </article>
-//   );
-// }
 import React from "react";
-import { useCart } from "../context/CartContext"; // ✅ import cart context
+import { useCart } from "../context/CartContext";
+import { useWishlist } from "../context/WishlistContext"; // ✅ import wishlist
 
-export default function ProductCard({
-  product,
-  onQuickView,
-  onToggleWishlist,
-  isWishlisted,
-}) {
-  const { addToCart } = useCart(); // ✅ get addToCart function
+export default function ProductCard({ product, onQuickView }) {
+  const { addToCart } = useCart();
+  const { toggleWishlist, isWishlisted } = useWishlist(); // ✅ hook
 
   return (
     <article className="product-card" aria-label={product.name}>
-      <div className="product-media" onClick={() => onQuickView(product)}>
+      <div className="product-media" onClick={() => onQuickView?.(product)}>
         <img className="product-img" src={product.img} alt={product.name} />
       </div>
 
       <div className="product-info">
         <h3 className="product-name">{product.name}</h3>
+
         <div className="product-meta">
-          <span className="product-price">${product.price.toFixed(2)}</span>
+          <span className="product-price">
+            ₦{product.price.toLocaleString()}
+          </span>
           <span className="product-rating">⭐ {product.rating}</span>
         </div>
 
         <div className="product-actions">
-          {/* ✅ Now this actually adds to cart */}
+          {/* 🛒 Add to Cart */}
+          <button className="add-to-cart" onClick={() => addToCart(product)}>
+            Add to Cart 🛒
+          </button>
+
+          {/* ❤️ Wishlist toggle */}
           {/* <button
-            className="add-to-cart"
-            onClick={() => addToCart(product)}
+            className={`wish-btn ${isWishlisted(product.id) ? "active" : ""}`}
+            onClick={() => toggleWishlist(product.id)}
+            aria-pressed={isWishlisted(product.id)}
+            title={
+              isWishlisted(product.id)
+                ? "Remove from wishlist"
+                : "Add to wishlist"
+            }
           >
-            Add to cart
+            {isWishlisted(product.id) ? "♥" : "♡"}
           </button> */}
-           <button className="add-to-cart" onClick={() => addToCart(product)}>
-        Add to Cart 🛒
-      </button>
 
           <button
-            className={`wish-btn ${isWishlisted ? "active" : ""}`}
-            onClick={() => onToggleWishlist(product.id)}
-            aria-pressed={isWishlisted}
-            title={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
-          >
-            {isWishlisted ? "♥" : "♡"}
-          </button>
+              className={`wish-btn ${isWishlisted(product.id) ? "active" : ""}`}
+              onClick={() => toggleWishlist(product)} // ✅ pass product, not just id
+              aria-pressed={isWishlisted(product.id)}
+              title={
+                isWishlisted(product.id)
+                  ? "Remove from wishlist"
+                  : "Add to wishlist"
+              }
+            >
+              {isWishlisted(product.id) ? "♥" : "♡"}
+            </button>
+
         </div>
       </div>
     </article>

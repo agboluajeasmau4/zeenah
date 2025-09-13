@@ -1,4 +1,5 @@
 
+
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
@@ -13,8 +14,8 @@ export default function CartPage() {
     (sum, item) => sum + (item.price || 0) * (item.quantity || 0),
     0
   );
-  const shipping = subtotal > 0 ? 10 : 0; // flat rate
-  const discount = subtotal > 100 ? 15 : 0; // example discount
+  const shipping = subtotal > 0 ? 2000 : 0; // ₦2,000 flat rate
+  const discount = subtotal > 50000 ? 5000 : 0; // ₦5,000 discount
   const total = subtotal + shipping - discount;
 
   // Auto-calculate delivery date (5–7 working days)
@@ -91,7 +92,7 @@ export default function CartPage() {
                       <button className="edit-btn">Edit</button>
                     </div>
                   </td>
-                  <td>${(item.price || 0).toFixed(2)}</td>
+                  <td>₦{(item.price || 0).toLocaleString()}</td>
                   <td>
                     <div className="qty-controls">
                       <button
@@ -109,7 +110,7 @@ export default function CartPage() {
                       </button>
                     </div>
                   </td>
-                  <td>${((item.price || 0) * (item.quantity || 0)).toFixed(2)}</td>
+                  <td>₦{((item.price || 0) * (item.quantity || 0)).toLocaleString()}</td>
                   <td>
                     <button
                       className="remove-btn"
@@ -129,19 +130,19 @@ export default function CartPage() {
           <h2>Order Summary</h2>
           <div className="summary-row">
             <span>Subtotal</span>
-            <span>${subtotal.toFixed(2)}</span>
+            <span>₦{subtotal.toLocaleString()}</span>
           </div>
           <div className="summary-row">
             <span>Shipping</span>
-            <span>${shipping.toFixed(2)}</span>
+            <span>₦{shipping.toLocaleString()}</span>
           </div>
           <div className="summary-row">
             <span>Discount</span>
-            <span>−${discount.toFixed(2)}</span>
+            <span>−₦{discount.toLocaleString()}</span>
           </div>
           <div className="summary-row total">
             <strong>Total</strong>
-            <strong>${total.toFixed(2)}</strong>
+            <strong>₦{total.toLocaleString()}</strong>
           </div>
           <p className="delivery-date">
             Estimated Delivery: <span>{deliveryDate}</span>
@@ -154,4 +155,3 @@ export default function CartPage() {
     </div>
   );
 }
-

@@ -8,7 +8,7 @@ const AboutHero = () => {
       <div className="about-hero-content">
         <h1>About Us</h1>
         <p>
-          Stitching dreams into reality since 2015 — blending craftsmanship,
+          Stitching dreams into reality since 2025 — blending craftsmanship,
           sustainability, and style.
         </p>
       </div>

@@ -1,5 +1,5 @@
 .about-hero {
-  background: url("/images/hero.jpg") center/cover no-repeat;
+  background: url("images/hero.png") center/cover no-repeat;
   height: 60vh;
   display: flex;
   align-items: center;

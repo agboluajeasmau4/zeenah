@@ -1,14 +1,14 @@
 import React from "react";
-import AboutNavbar from "../components/AboutNavbar";
+import Navbar from "../components/Navbar";
 import AboutHero from "../components/AboutHero";
 import Newsletter from "../components/Newsletter";
-import AboutFooter from "../components/AboutFooter";
+import Footer from "../components/Footer";
 import "./About.css";
 
 const About = () => {
   return (
     <>
-      <AboutNavbar />
+      <Navbar />
       <AboutHero />
 
       <div className="about-container">
@@ -16,14 +16,14 @@ const About = () => {
         <section className="about-story">
           <h2>Our Story</h2>
           <p>
-            Founded in <strong>2015</strong>, [Your Brand Name] started as a
+            Founded in <strong>2025</strong>, Zeenah Clothique started as a
             small sewing studio with a passion for creating unique, tailored
             pieces. What began with custom orders for friends and family has
             grown into a global fashion brand, shipping handcrafted designs to
             customers worldwide.
           </p>
           <img
-            src="/images/elegant-product4.jpg"
+            src="images/zeenah-logo.png"
             alt="Sewing Studio"
             className="about-image"
           />
@@ -53,8 +53,8 @@ const About = () => {
           <h2>Meet Our Team</h2>
           <div className="team-grid">
             <div className="team-member">
-              <img src="/images/elegant-product4.jpg" alt="Founder" />
-              <h3>Jane Doe</h3>
+              <img src="images/founder-img.png" alt="Founder" />
+              <h3>Zaynab Olaiya</h3>
               <p>Founder & Lead Designer</p>
             </div>
             <div className="team-member">
@@ -63,8 +63,8 @@ const About = () => {
               <p>Operations Manager</p>
             </div>
             <div className="team-member">
-              <img src="/images/elegant-product2.jpg" alt="Marketing" />
-              <h3>Emily Rose</h3>
+              <img src="images/marketing-img.jpeg" alt="Marketing" />
+              <h3>Asmau Agboluaje</h3>
               <p>Marketing & Community</p>
             </div>
           </div>
@@ -79,7 +79,7 @@ const About = () => {
                 “The craftsmanship is incredible. I feel confident and stylish
                 every time I wear their clothes.”
               </p>
-              <h4>- Sarah K.</h4>
+              <h4>- Agboluaje A.</h4>
             </div>
             <div className="review-card">
               <p>
@@ -99,7 +99,7 @@ const About = () => {
         </section>
       </div>
       <Newsletter />
-      <AboutFooter />
+      <Footer />
       
     </>
   );

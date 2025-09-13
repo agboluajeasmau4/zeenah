@@ -55,10 +55,11 @@
   text-align: left;
 }
 .cart-img {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 70px;
   object-fit: cover;
   border-radius: 6px;
+  display: block;
 }
 .cart-details {
   font-size: 0.9rem;

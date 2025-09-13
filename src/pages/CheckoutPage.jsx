@@ -1,7 +1,5 @@
 
 
-
-
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
@@ -12,13 +10,13 @@ export default function CheckoutPage() {
   const navigate = useNavigate();
   const [deliveryDate, setDeliveryDate] = useState("");
 
-  // Calculate totals
+  // Calculate totals in ₦
   const subtotal = cart.reduce(
     (sum, item) => sum + (item.price || 0) * (item.quantity || 0),
     0
   );
-  const shipping = subtotal > 0 ? 10 : 0;
-  const discount = subtotal > 100 ? 15 : 0;
+  const shipping = subtotal > 0 ? 2000 : 0; // ₦2,000 flat rate
+  const discount = subtotal > 50000 ? 5000 : 0; // ₦5,000 discount
   const total = subtotal + shipping - discount;
 
   // Delivery date
@@ -99,8 +97,10 @@ export default function CheckoutPage() {
           </div>
           <div className="form-row">
             <div className="form-group">
-              <label>Zip Code</label>
-              <input type="text" required />
+              <label>Zip Code</label>  
+             
+              <input type="text" placeholder="" optional />
+              
             </div>
             <div className="form-group">
               <label>Country</label>
@@ -109,19 +109,19 @@ export default function CheckoutPage() {
           </div>
 
           <h2>Payment Method</h2>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label>
               <input type="radio" name="payment" defaultChecked /> Credit Card
             </label>
             <div className="card-details">
-              <input type="text" placeholder="Card Number"  />
-              <input type="text" placeholder="MM/YY"  />
-              <input type="text" placeholder="CVV"  />
+              <input type="text" placeholder="Card Number" />
+              <input type="text" placeholder="MM/YY" />
+              <input type="text" placeholder="CVV" />
             </div>
-          </div>
+          </div> */}
           <div className="form-group">
             <label>
-              <input type="radio" name="payment" /> PayPal
+              <input type="radio" name="payment" /> Bank Transfer
             </label>
           </div>
           <div className="form-group">
@@ -140,19 +140,19 @@ export default function CheckoutPage() {
           <h2>Order Summary</h2>
           <div className="summary-row">
             <span>Subtotal</span>
-            <span>${subtotal.toFixed(2)}</span>
+            <span>₦{subtotal.toLocaleString()}</span>
           </div>
           <div className="summary-row">
             <span>Shipping</span>
-            <span>${shipping.toFixed(2)}</span>
+            <span>₦{shipping.toLocaleString()}</span>
           </div>
           <div className="summary-row">
             <span>Discount</span>
-            <span>−${discount.toFixed(2)}</span>
+            <span>−₦{discount.toLocaleString()}</span>
           </div>
           <div className="summary-row total">
             <strong>Total</strong>
-            <strong>${total.toFixed(2)}</strong>
+            <strong>₦{total.toLocaleString()}</strong>
           </div>
           <p className="delivery-date">
             Estimated Delivery: <span>{deliveryDate}</span>
@@ -162,3 +162,4 @@ export default function CheckoutPage() {
     </div>
   );
 }
+

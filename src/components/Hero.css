@@ -1,10 +1,11 @@
 .hero {
   height: 90vh;
-  background: url("/images/hero.jpg") center/cover no-repeat;
+  background: url("/images/hero.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  width: 100%;
 }
 
 .hero-overlay {
@@ -13,8 +14,8 @@
   text-align: center;
   color: white;
   border-radius: 10px;
-  animation: fadeIn 2s ease-in-out;
-}
+  animation: fadeIn 4s ease-in-out;}
+
 
 .hero h1 {
   font-size: 48px;
