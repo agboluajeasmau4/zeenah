@@ -23,7 +23,7 @@ const About = () => {
             customers worldwide.
           </p>
           <img
-            src="images/zeenah-logo.png"
+            src="public/images/zeenah-logo.png"
             alt="Sewing Studio"
             className="about-image"
           />
@@ -53,17 +53,17 @@ const About = () => {
           <h2>Meet Our Team</h2>
           <div className="team-grid">
             <div className="team-member">
-              <img src="images/founder-img.png" alt="Founder" />
+              <img src="images/founder.png" alt="Founder" />
               <h3>Zaynab Olaiya</h3>
               <p>Founder & Lead Designer</p>
             </div>
             <div className="team-member">
-              <img src="/images/elegant-product5.jpg" alt="Manager" />
+              <img src="images/marketing.jpeg" alt="Manager" />
               <h3>John Smith</h3>
               <p>Operations Manager</p>
             </div>
             <div className="team-member">
-              <img src="images/marketing-img.jpeg" alt="Marketing" />
+              <img src="images/marketing.jpeg" alt="Marketing" />
               <h3>Asmau Agboluaje</h3>
               <p>Marketing & Community</p>
             </div>

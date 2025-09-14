@@ -54,7 +54,7 @@ const products = [
     category: "Men",
     size: ["M","L","XL"],
     colors:["Black","Beige"],
-    img:"images/Two-Tone Black & Beige Hoodie – Unisex Casual Wear.png",
+    img:"images/two-tone-black-beige-hoodie.png",
     rating:4.6
   },
   {
@@ -65,7 +65,7 @@ const products = [
     category: "Men",
     size: ["M","L","XL"],
     colors:["Green","White"],
-    img:"images/Green & White Striped Hoodie – Relaxed Fit.png",
+    img:"images/green-white-striped-hoodie.png",
     rating:4.5
   },
   {
@@ -76,7 +76,7 @@ const products = [
     category: "Men",
     size: ["M","L","XL"],
     colors:["Navy Blue","Camel","Black"],
-    img:"images/3PCS Hoodie Bundle (Navy, Camel, Black) – Everyday Casual Pack.png",
+    img:"images/hoodie-bundle-3pcs-navy-camel-black.png",
     rating:4.9
   },
 ];

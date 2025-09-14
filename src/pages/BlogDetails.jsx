@@ -7,7 +7,7 @@ const articles = [
   {
     id: 1,
     title: "Top 5 Fashion Trends in 2025",
-    img: "/images/Open Abaya – Grey Nida.jpg",
+    // img: "public/images/Open-Abaya-Grey-Nida.jpg",
     
     date: "Feb 15, 2025",
     author: "Admin",
@@ -21,7 +21,7 @@ const articles = [
   {
     id: 2,
     title: "How to Style Black & Gold Outfits",
-    img: "images/classic-black-abaya.png",
+    // img: "public/images/classic-black-abaya.png",
     date: "Jan 30, 2025",
     author: "Admin",
     content: `
@@ -34,7 +34,7 @@ const articles = [
   {
     id: 3,
     title: "Sustainable Fashion: Why It Matters",
-    img: "images/Abaya-with-hijab-Sky-Blue.jpg",
+    // img: "public/images/Abaya-with-hijab-Sky-Blue.jpg",
     date: "Jan 20, 2025",
     author: "Admin",
     content: `

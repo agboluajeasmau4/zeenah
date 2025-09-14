@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import "./Blog.css";
 
 const articles = [
-  { id: 1, title: "Top 5 Fashion Trends in 2025", img: "images/Open Abaya – Grey Nida.jpg" },
+  { id: 1, title: "Top 5 Fashion Trends in 2025", img: "images/open-abaya-grey-nida.jpg" },
   { id: 2, title: "How to Style Black & Gold Outfits", img: "images/classic-black-abaya.png" },
-  { id: 3, title: "Sustainable Fashion: Why It Matters", img: "images/Abaya-with-hijab-Sky-Blue.jpg" },
+  { id: 3, title: "Sustainable Fashion: Why It Matters", img: "images/abaya-with-hijab-sky-blue.jpg" },
 ];
 
 const Blog = () => {

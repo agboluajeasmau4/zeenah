@@ -2,10 +2,10 @@ import React from "react";
 import "./FeaturedCategories.css";
 
 const categories = [
-  { title: "Men's Collection", img: "images/Two-Tone Black & Beige Hoodie – Unisex Casual Wear.png" },
-  { title: "Women's Collection", img: "images/Abaya-with-hijab-Sky-Blue.jpg" },
+  { title: "Men's Collection", img: "images/two-tone-black-beige-hoodie.png" },
+  { title: "Women's Collection", img: "images/abaya-with-hijab-sky-blue.jpg" },
   { title: "Accessories", img: "images/accessories.jpg" },
-  { title: "Kids", img: "/images/elegant-product3.jpg" },
+  { title: "Kids", img:"images/open-abaya-grey-nida.jpg" },
 ];
 
 const FeaturedCategories = () => {
